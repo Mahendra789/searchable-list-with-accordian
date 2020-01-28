@@ -6,29 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FilestackModule } from '@filestack/angular';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {
-  MatCardModule,
-  MatInputModule,
-  MatButtonModule
-} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-const modules = [
-  MatCardModule,
-  MatInputModule,
-  MatButtonModule
-];
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,16 +23,17 @@ const modules = [
     HttpClientModule,
     NgbModule,
     FormsModule,
-    FilestackModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
     MatFormFieldModule,
-    modules,
-    ReactiveFormsModule
+    MatInputModule,
+    MatIconModule,
+    Ng2SearchPipeModule
+
+    
     
   ],
-  exports: modules,
   providers: [],
   bootstrap: [AppComponent]
 })
